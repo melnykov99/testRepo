@@ -94,12 +94,69 @@ let myStr8 = "Hello"; // Задаем переменную с значением
 let firstChar = myStr8[0] // обращаемся к первому элементу myStr8
 
 
-function positiveSum(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
-        const summ = 0;
-        if (element > 0) {
-            summ += arr[i]
-        } else summ += 0;
-    } return summ;
+let myStr9 = "Bob";
+myStr9[0] = "J"; // НЕ РАБОТАЕТ. Строки невозможно заменить частично
+myStr9 = "Job"; // только полностью перезаписать
+
+let myStr10 = "Hello World";
+let lastCharInMyStr10 = myStr10[myStr10.length - 1]; // d // Узнаем последним символ через длинну строки - 1
+
+const myArray = ["Dmitry", 22]; // массив данных
+const myArray2 = [["hello", 1], ["World", 2]]; // массивы внутри массива
+
+const myArray3 = [50, 60, 70]; // объявление переменной в которой массив
+let myData = myArray3[0]; //обращение к первому элементу массива через индекс
+
+const myArray4 = [18, 64, 99]; 
+myArray4[0] = 45; // в отличие от строк, данные в массиве можно перезаписать при обращении к индексу. Даже если массив объявлен через const
+
+const myArray5 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14],
+];
+
+const myData2 = myArray5[3][0][1]; //11 // обращаемся к 3 элементу общего массива, выбираем внутренний массив (нулевой элемент), и цифру 11 индекс 1 массива
+
+const myArray6 = [
+  ["John", 23],
+  ["cat", 2],
+];
+myArray6.push(["dog", 3]); // с помощью метода push в конец массива мы можем добавлять значения
+
+const myArray7 = [1, 2, 3, 4];
+myArray7.push(5, 6, 7); // теперь myArray7 выглядит так [1, 2, 3, 4, 5, 6, 7]
+
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop(); //метод pop удаляет последний элемент массива. Может извлечь строки, числа и вложенные массивы
+console.log(oneDown); // 6
+console.log(threeArr); // [1, 4]
+
+const ourArray = ["Stimpson", "J", ["cat"]];
+const removedFromOurArray = ourArray.shift(); // аналогично с pop удаляет элемент массива, но первый.
+console.log(removedFromOurArray) // "Stimpson"
+
+const myArray8 = [
+  ["John", 23],
+  ["dog", 3],
+];
+myArray8.unshift(["Paul", 35]); // метод unshift добавляет в начало массива значение. Аналогично с Push, но в начало
+
+
+function reusableFunction() { // объявление функции
+  console.log("Hi World"); // тело функции
 }
+
+reusableFunction(); // вызов функции
+
+function functionWithArgs(paramOne, paramTwo) { // в функции можно определить параметры. Значения, которые функция будем принимать
+  console.log(paramOne + paramTwo); //действия с параметрами
+}
+functionWithArgs(1, 2); // 1, 2 аргументы функции, которые передаются ей в параметры
+
+function plusThree(num) { //параметр число
+  return num + 3; // принимаемое число в параметре увеличиваем на 3 и ВОЗВРАЩАЕМ с помощью return
+}
+
+const answer = plusThree(5); // answer будет содержать 8. 5 передали в аргументе функции и функция вернула 8 (5+3)
